@@ -22,8 +22,8 @@ function displayBook() {
   for (const book of myLibrary) {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.innerHTML += `<h1>${book.title}</h1>`;
-    card.innerHTML += `<h2>${book.author}</h2>`;
+    card.innerHTML += `<h2>${book.title}</h2>`;
+    card.innerHTML += `<h3>${book.author}</h3>`;
     console.log(book.title);
     library.appendChild(card);
   }
@@ -42,6 +42,5 @@ submitButton.addEventListener("click", (e) => {
   addBookToLibrary(titleInput, authorInput, pagesInput, readInput);
   displayBook();
 });
-
 
 // css form section to expand when clicked and close when submitted or cancelled/ also called burger menu
