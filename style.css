@@ -134,6 +134,7 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 1%;
+  display: grid;
 }
 
 .cards > .card:nth-child(1) {
@@ -154,6 +155,14 @@ main {
   aspect-ratio: 4/5;
   padding: 10px;
   border-left: 4px solid rgba(137, 206, 109);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card h2,
+.card h3 {
+  background: rgba(12, 13, 12, 0.4);
 }
 
 label > img {
@@ -187,6 +196,7 @@ label > img {
   background: #f8f9fa;
   box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
   transition: right 0.3s ease;
+  overflow: auto;
 }
 
 .drawer h2 {
@@ -198,15 +208,15 @@ form {
   gap: 20px;
   margin-top: 40px;
   justify-content: center;
+  display: flex;
 }
 
 .drawer-toggle:checked ~ .drawer {
   right: 0;
 }
 
-/* fix colours. css variables. 
-find a better draw icon/ move somewhere?
-opaque boxes for card titles (for better cover accessibility.)
+/* opaque boxes for card titles (for better cover accessibility.)
 add read/unread box for all cards
-box shadow might make header image less jarring
+fix colours. css variables. 
+find a better drawer icon/ move somewhere?
   */

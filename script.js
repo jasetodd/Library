@@ -42,5 +42,3 @@ submitButton.addEventListener("click", (e) => {
   addBookToLibrary(titleInput, authorInput, pagesInput, readInput);
   displayBook();
 });
-
-// css form section to expand when clicked and close when submitted or cancelled/ also called burger menu
