@@ -135,6 +135,7 @@ main {
   gap: 20px;
   padding: 1%;
   display: grid;
+  margin-top: 100px;
 }
 
 .cards > .card:nth-child(1) {
@@ -165,6 +166,17 @@ main {
   background: rgba(12, 13, 12, 0.4);
 }
 
+.card .removeBtn {
+  height: 30px;
+  width: 100px;
+  font-size: 1em;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  color: sandybrown;
+  background-color: grey;
+  border-radius: 5px;
+  
+}
+
 label > img {
   position: relative;
   left: 10px;
@@ -184,6 +196,7 @@ label > img {
   height: 50px;
   z-index: 10000;
   position: fixed;
+  top: 9%;
 }
 
 .drawer {
@@ -215,8 +228,8 @@ form {
   right: 0;
 }
 
-/* opaque boxes for card titles (for better cover accessibility.)
-add read/unread box for all cards
-fix colours. css variables. 
-find a better drawer icon/ move somewhere?
+/* https://medium.com/@wyou130/behind-the-scenes-javascript-event-listeners-and-e-71f0eb49be92
+ add read/unread box for all cards
+ css for cards.
+ find a better drawer icon/ change when open?
   */

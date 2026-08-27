@@ -21,9 +21,24 @@ function displayBook() {
   library.innerHTML = "";
   for (const book of myLibrary) {
     const card = document.createElement("div");
+    card.setAttribute("id", book.uuid);
     card.classList.add("card");
     card.innerHTML += `<h2>${book.title}</h2>`;
     card.innerHTML += `<h3>${book.author}</h3>`;
+    card.innerHTML += `<p>${book.pages} pages</p>`;
+    
+
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add("removeBtn");
+    removeBtn.addEventListener("click", (e) => {
+      const bookId = e.target.parentElement.id;
+      const bookIndex = myLibrary.findIndex((book) => book.uuid === bookId);
+      myLibrary.splice(bookIndex, 1);
+      displayBook();
+    });
+
+    card.append(removeBtn);
     console.log(book.title);
     library.appendChild(card);
   }
@@ -31,6 +46,7 @@ function displayBook() {
 displayBook();
 
 const submitButton = document.querySelector("#submit");
+
 submitButton.addEventListener("click", (e) => {
   const titleInput = document.querySelector("#title").value;
   const authorInput = document.querySelector("#author").value;
