@@ -10,6 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+GB+S+Guides:ital@0;1&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playwrite+GB+S+Guides:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
     <title>Library</title>
   </head>
   <body>
@@ -37,11 +43,11 @@
       <form action="">
         <div>
           <label for="name">Book Title:</label>
-          <input type="text" id="title" name="name" />
+          <input type="text" id="title" name="name" required />
         </div>
         <div>
           <label for="author">Author</label>
-          <input type="text" id="author" name="author" />
+          <input type="text" id="author" name="author" required />
         </div>
         <div>
           <label for="pages">Pages in book: </label>
@@ -57,7 +63,9 @@
     <main>
       <section class="library">
         <section class="add-book"></section>
-        <section class="cards"></section>
+        <section class="cards">
+          <div class="read"></div>
+        </section>
       </section>
     </main>
     <script src="script.js"></script>

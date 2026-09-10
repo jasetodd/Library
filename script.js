@@ -20,13 +20,13 @@ function displayBook() {
   const library = document.querySelector(".cards");
   library.innerHTML = "";
   for (const book of myLibrary) {
+    if (!book.title || !book.author) continue;
     const card = document.createElement("div");
     card.setAttribute("id", book.uuid);
     card.classList.add("card");
     card.innerHTML += `<h2>${book.title}</h2>`;
     card.innerHTML += `<h3>${book.author}</h3>`;
     card.innerHTML += `<p>${book.pages} pages</p>`;
-    
 
     const removeBtn = document.createElement("button");
     removeBtn.textContent = "Remove";
@@ -37,6 +37,20 @@ function displayBook() {
       myLibrary.splice(bookIndex, 1);
       displayBook();
     });
+
+    const readCheckbox = document.createElement("input");
+    readCheckbox.setAttribute("type", "checkbox");
+    readCheckbox.checked = book.read;
+    readCheckbox.addEventListener("change", (e) => {
+      const bookId = e.target.parentElement.id;
+      const bookIndex = myLibrary.findIndex((book) => book.uuid === bookId);
+      myLibrary[bookIndex].read = e.target.checked;
+    });
+    const p = document.createElement("p");
+    card.append(p);
+    p.setAttribute("class", "read");
+    p.textContent = "Read: ";
+    p.append(readCheckbox);
 
     card.append(removeBtn);
     console.log(book.title);
